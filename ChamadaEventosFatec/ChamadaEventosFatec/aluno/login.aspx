@@ -33,6 +33,9 @@
 
             <!-- Botão -->
             <asp:Button runat="server" ID="btnLogin" CssClass="btn btn-lg btn-primary btn-block" Text="Entrar" OnClick="Logar" />
+        
+            <!-- Aviso -->
+            <asp:Label runat="server" CssClass="alert alert-danger" ID="alertSenha" Visible="false"></asp:Label>
         </form>
     </div>
     
