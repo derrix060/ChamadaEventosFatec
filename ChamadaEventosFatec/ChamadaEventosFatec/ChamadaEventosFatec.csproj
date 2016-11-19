@@ -70,6 +70,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="inscricao\inscrever.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -97,6 +98,13 @@
     </Compile>
     <Compile Include="aluno\editar.aspx.designer.cs">
       <DependentUpon>editar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inscricao\inscrever.aspx.cs">
+      <DependentUpon>inscrever.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inscricao\inscrever.aspx.designer.cs">
+      <DependentUpon>inscrever.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
