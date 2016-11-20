@@ -43,15 +43,11 @@ namespace ChamadaEventosFatec.inscricao
 
         protected void Refresh_Palestra_Materia(object sender, EventArgs e)
         {
-            string strFilterPeriodo = "";
-            string strFilterDia = "";
-
-
             //filter Periodo
-            strFilterPeriodo = "periodo='" + dropPeriodo.SelectedValue + "'";
+            string strFilterPeriodo = "periodo='" + dropPeriodo.SelectedValue + "'";
 
             //filter Dia
-            strFilterDia = "dia='" + dropDia.SelectedValue + "'";
+            string strFilterDia = "dia='" + dropDia.SelectedValue + "'";
 
             try
             {
@@ -76,11 +72,8 @@ namespace ChamadaEventosFatec.inscricao
                 dropMateria.Items.Clear();
             }
 
-            //Response.Write("<script lang=javasript>$('.selectpicker').selectpicker();</script>");
         }
-
-
-
+        
         private void Carrega_Periodo()
         {
             sql = "SELECT cod FROM periodo ORDER BY ord DESC";
