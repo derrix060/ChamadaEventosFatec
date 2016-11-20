@@ -70,6 +70,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="aluno\inicio.aspx" />
     <Content Include="aluno\login.aspx" />
     <Content Include="inscricao\inscrever.aspx" />
     <Content Include="packages.config" />
@@ -100,6 +101,13 @@
     <Compile Include="aluno\editar.aspx.designer.cs">
       <DependentUpon>editar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="aluno\inicio.aspx.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aluno\inicio.aspx.designer.cs">
+      <DependentUpon>inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="aluno\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +115,8 @@
     <Compile Include="aluno\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="auxiliares\BancoDados.cs" />
+    <Compile Include="auxiliares\Encrypt.cs" />
     <Compile Include="inscricao\inscrever.aspx.cs">
       <DependentUpon>inscrever.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

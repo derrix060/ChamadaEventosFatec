@@ -4,6 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <!-- Mobile First -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
     <!-- Login -->
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -13,9 +16,9 @@
     <title>Login - Chamada Fatec</title>
 
     <!-- Bootstrap -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../Sources/jquery.min.js"></script>
+    <link href="../Sources/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../Sources/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -32,10 +35,13 @@
             <asp:RequiredFieldValidator ID="rfvSenha" runat="server" ControlToValidate="inputSenha" ErrorMessage="Digite uma senha!" CssClass="label label-danger"></asp:RequiredFieldValidator>
 
             <!-- Botão -->
-            <asp:Button runat="server" ID="btnLogin" CssClass="btn btn-lg btn-primary btn-block" Text="Entrar" OnClick="Logar" />
-        
+            <div class="row">
+                <asp:Button runat="server" ID="btnLogin" CssClass="btn btn-lg btn-primary btn-block" Text="Entrar" OnClick="Logar" />
+            </div>
             <!-- Aviso -->
-            <asp:Label runat="server" CssClass="alert alert-danger" ID="alertSenha" Visible="false"></asp:Label>
+            
+                <asp:Label runat="server" CssClass="label label-danger" ID="alertSenha" Visible="false"></asp:Label>
+            
         </form>
     </div>
     

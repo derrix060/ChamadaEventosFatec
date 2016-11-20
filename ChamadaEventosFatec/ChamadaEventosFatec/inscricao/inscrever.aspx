@@ -6,13 +6,13 @@
 <head runat="server">
      <title>Inscricao</title>
     <!-- Bootstrap -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../Sources/jquery.min.js"></script>
+    <link href="../Sources/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../Sources/bootstrap.min.js"></script>
     
     <!-- Bootstrap Select -->
-    <link rel="stylesheet" type="text/css" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css"/>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../Sources/bootstrap-select.min.css"/>
+    <script src="../Sources/bootstrap-select.min.js"></script>
 
 
 </head>

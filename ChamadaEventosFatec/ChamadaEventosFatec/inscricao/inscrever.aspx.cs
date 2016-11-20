@@ -7,20 +7,15 @@ using System.Web.UI.WebControls;
 
 //DataSet
 using System.Data;
-
-//Database
-using MySql.Data.MySqlClient;
+//Database and Encript
+using ChamadaEventosFatec.auxiliares;
 
 namespace ChamadaEventosFatec.inscricao
 {
     public partial class inscrever : System.Web.UI.Page
     {
-        static string sc = "Server=localhost;Database=chamada;uid=visual_studio;pwd=visual;";
-        static string sql;
-        static MySqlConnection conn = new MySqlConnection(sc);
-
-        static MySqlDataAdapter conversor = new MySqlDataAdapter();
-        static DataSet ds = new DataSet();
+        string sql;
+        DataSet ds = new DataSet();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -89,57 +84,25 @@ namespace ChamadaEventosFatec.inscricao
         private void Carrega_Periodo()
         {
             sql = "SELECT cod FROM periodo ORDER BY ord DESC";
-
-            conversor.SelectCommand = new MySqlCommand(sql, conn);
-            try
-            {
-                ds.Tables["tbPeriodo"].Clear();
-            }
-            catch
-            {
-                sql = "";
-            }
-            conversor.Fill(ds, "tbPeriodo");
+            BancoDados.UpdateDataSet(ds, sql, "tbPeriodo", true);
         }
 
         private void Carrega_Dia()
         {
             sql = "SELECT dia FROM dia ORDER BY ord DESC";
-
-            conversor.SelectCommand = new MySqlCommand(sql, conn);
-            try
-            {
-                ds.Tables["tbDia"].Clear();
-            }
-            catch{ }
-            
-            conversor.Fill(ds, "tbDia");
+            BancoDados.UpdateDataSet(ds, sql, "tbDia", true);
         }
 
         private void Carrega_Palestra()
         {
             sql = "SELECT * FROM palestra";
-
-            conversor.SelectCommand = new MySqlCommand(sql, conn);
-            try
-            {
-                ds.Tables["tbPalestra"].Clear();
-            }
-            catch { }
-            conversor.Fill(ds, "tbPalestra");
+            BancoDados.UpdateDataSet(ds, sql, "tbPalestra", true);
         }
 
         private void Carrega_Materia()
         {
             sql = "SELECT * FROM materia";
-
-            conversor.SelectCommand = new MySqlCommand(sql, conn);
-            try
-            {
-                ds.Tables["tbMateria"].Clear();
-            }
-            catch { }
-            conversor.Fill(ds, "tbMateria");
+            BancoDados.UpdateDataSet(ds, sql, "tbMateria", true);
         }
     }
 }
