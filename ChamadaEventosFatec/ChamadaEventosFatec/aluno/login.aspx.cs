@@ -9,8 +9,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 //cript and DB
 using ChamadaEventosFatec.auxiliares;
-//reader
-using MySql.Data.MySqlClient;
+//DataSet
+using System.Data;
 
 namespace ChamadaEventosFatec.aluno
 {
@@ -29,20 +29,18 @@ namespace ChamadaEventosFatec.aluno
                 string sql = "SELECT matricula, senha FROM aluno WHERE email = '" + inputEmail.Text + "'";
 
                 //executar
-                MySqlDataReader reader = BancoDados.GetFromDB(sql);
-                 
-
-                if (reader.Read())
+                DataTable dt = BancoDados.GetFromDB(sql);
+                
+                if (dt.Rows.Count == 1)
                 {
 
                     Byte[] senhaTela = Encrypt.Criptografar(inputSenha.Text);
 
-                    Byte[] senhaBanco = (Byte[]) reader["senha"];
+                    Byte[] senhaBanco = (Byte[]) dt.Rows[0].ItemArray[1];
 
                     if (Encrypt.Equals(senhaTela, senhaBanco))
                     {
-                        //ok -> Goto inicial
-                        alertSenha.Text = "Tudo certo!";
+                        Session["matriculaAluno"] = dt.Rows[0].ItemArray[0].ToString();
 
                         Response.Redirect("/aluno/inicio.aspx");
                     }

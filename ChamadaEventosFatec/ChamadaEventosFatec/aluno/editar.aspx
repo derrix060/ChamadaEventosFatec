@@ -26,7 +26,7 @@
          <!-- Matricula -->
         <div class="form-group">
             <asp:Label for="inputMatricula" runat="server" Enabled="false">Matricula</asp:Label>
-            <asp:TextBox runat="server" TextMode="Number" CssClass="form-control" id="inputMatricula" placeholder="Digite sua matricula..." Enabled="false" Text="2040481423032"></asp:TextBox>
+            <asp:TextBox runat="server" TextMode="Number" CssClass="form-control" id="inputMatricula" placeholder="Digite sua matricula..." Enabled="false" Text=""></asp:TextBox>
         </div>
 
 

@@ -37,22 +37,11 @@ namespace ChamadaEventosFatec.auxiliares
             }
         }
 
-        public static MySqlDataReader GetFromDB (string sql)
+        public static DataTable GetFromDB (string sql)
         {
-            MySqlDataReader retorno = null;
-            cmd = new MySqlCommand(sql, conn);
-            try
-            {
-                conn.Open();
-                retorno = cmd.ExecuteReader();
-                conn.Close();
-            }
-            catch (Exception exc)
-            {
-                conn.Close();
-                throw new Exception(exc.Message);
-            }
-            return retorno;
+            DataSet ds = new DataSet();
+            UpdateDataSet(ds, sql, "tbl", true);
+            return ds.Tables["tbl"];
         }
 
         public static void UpdateDataSet (DataSet ds, string sql, string tbName, bool removeOld)

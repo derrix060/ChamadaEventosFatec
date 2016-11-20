@@ -4,9 +4,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <!-- Mobile First -->
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
     <!-- Login -->
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -24,7 +21,7 @@
 <body>
     <div class="container">
         <form id="formLogin" runat="server" class="form-signin">
-            <h2 class="form-signin-heading">Bem-vindo Aluno!</h2>
+            <h1 class="form-signin-heading">Bem-vindo Aluno!</h1>
             
             <!-- Email -->
             <asp:TextBox runat="server" TextMode="Email" CssClass="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Digite seu email..."></asp:TextBox>
@@ -36,12 +33,18 @@
 
             <!-- Botão -->
             <div class="row">
-                <asp:Button runat="server" ID="btnLogin" CssClass="btn btn-lg btn-primary btn-block" Text="Entrar" OnClick="Logar" />
+                <div class="col-sm-6">
+                    <asp:Button runat="server" ID="btnLogin" CssClass="btn btn-lg btn-block btn-primary" Text="Entrar" OnClick="Logar" />
+                </div>
+                <div class="col-sm-6">
+                    <asp:Button runat="server" ID="btnCadastro" CssClass="btn btn-lg btn-block btn-success" Text="Cadastrar" PostBackUrl="~/aluno/cadastrar.aspx" />
+                </div>
             </div>
             <!-- Aviso -->
             
+            <div class="row">
                 <asp:Label runat="server" CssClass="label label-danger" ID="alertSenha" Visible="false"></asp:Label>
-            
+            </div>
         </form>
     </div>
     

@@ -10,10 +10,14 @@ body {
   margin: 0 auto;
 }
 .form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
+.form-signin{
+  margin-bottom: 20px;
 }
-.form-signin .checkbox {
+
+.form-signin-heading{
+	text-align: center;
+}
+.form-signin{
   font-weight: normal;
 }
 .form-signin .form-control {
@@ -37,4 +41,8 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.buttons{
+	margin-bottom: 20px;
 }

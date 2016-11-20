@@ -15,7 +15,10 @@ namespace ChamadaEventosFatec.aluno
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["matriculaAluno"] == null)
+                Response.Redirect("/aluno/login.aspx");
+            else
+                inputMatricula.Text = Session["matriculaAluno"].ToString();
         }
 
         protected void EditarAluno(object sender, EventArgs e)

@@ -15,7 +15,7 @@
 <body>
     <form id="formCadastroAluno" runat="server">
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron" style="text-align: center">
             <h1>Cadastro Aluno</h1>
         </div>
 
@@ -61,6 +61,7 @@
         <!-- Alertas -->
         <div class="alert alert-success alert-dismissable fade in" runat="server" id="alertSuccess" visible="false">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Parabéns!</strong> Cadastro concluído com sucesso! <a href="login.aspx">Clique aqui</a> para se logar.
         </div>
 
         <div class="alert alert-danger alert-dismissable fade in" runat="server" id="alertDanger" visible="false">

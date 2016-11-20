@@ -38,7 +38,7 @@ namespace ChamadaEventosFatec.aluno
             catch (Exception exception)
             {
                 alertDanger.Visible = true;
-                alertDanger.InnerHtml = "<strong>Ops! </strong> Houve algum problema para salvar no banco de dados!<br><br>Message: "
+                alertDanger.InnerHtml += "<strong>Ops! </strong> Houve algum problema!<br><br>Message: "
                     + exception.Message + "<br>Erro: " + exception.ToString();
             }
         }

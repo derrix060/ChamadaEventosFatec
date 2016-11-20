@@ -15,10 +15,12 @@ namespace ChamadaEventosFatec.inscricao
     public partial class inscrever : System.Web.UI.Page
     {
         string sql;
-        DataSet ds = new DataSet();
+        static DataSet ds = new DataSet();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["matriculaAluno"] == null)
+                Response.Redirect("/aluno/login.aspx");
 
             if (!Page.IsPostBack)
             {
@@ -76,13 +78,13 @@ namespace ChamadaEventosFatec.inscricao
         
         private void Carrega_Periodo()
         {
-            sql = "SELECT cod FROM periodo ORDER BY ord DESC";
+            sql = "SELECT cod FROM periodo ORDER BY ord";
             BancoDados.UpdateDataSet(ds, sql, "tbPeriodo", true);
         }
 
         private void Carrega_Dia()
         {
-            sql = "SELECT dia FROM dia ORDER BY ord DESC";
+            sql = "SELECT dia FROM dia ORDER BY ord";
             BancoDados.UpdateDataSet(ds, sql, "tbDia", true);
         }
 
@@ -96,6 +98,13 @@ namespace ChamadaEventosFatec.inscricao
         {
             sql = "SELECT * FROM materia";
             BancoDados.UpdateDataSet(ds, sql, "tbMateria", true);
+        }
+
+        protected void Inscrever(object sender, EventArgs e)
+        {
+            sql = "INSERT INTO inscricao (aluno, palestra) VALUES ('" +
+                Session["matriculaAluno"] + "','" +
+                "" + "')";
         }
     }
 }

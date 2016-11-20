@@ -65,7 +65,7 @@
         
 
         <!-- Inscricao -->
-        <asp:Button ID="btnInscrever" runat="server" CssClass="btn btn-primary" Text="Submit" />
+        <asp:Button ID="btnInscrever" runat="server" CssClass="btn btn-primary" Text="Submit" OnClick="Inscrever" />
 
     </form>
 
