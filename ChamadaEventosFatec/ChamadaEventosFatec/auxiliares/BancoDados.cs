@@ -12,7 +12,7 @@ namespace ChamadaEventosFatec.auxiliares
 {
     public class BancoDados
     {
-        private static string           sc      =   "Server=tcp:serverchamadaeventosfatec.database.windows.net,1433;Initial Catalog=chamada;Persist Security Info=False;User ID=mario@serverchamadaeventosfatec;Password=m@rIo564231897;"; //old -> "Server=localhost;Database=chamada;uid=visual_studio;pwd=visual;";
+        private static string           sc      = "Database=dbchamada;Data Source=br-cdbr-azure-south-b.cloudapp.net;User Id=b28cdfc9125d2a;Password=0d1204fdDatabase=dbchamada;Data Source=br-cdbr-azure-south-b.cloudapp.net;User Id=b28cdfc9125d2a;Password=0d1204fd"; //old -> "Server=localhost;Database=chamada;uid=visual_studio;pwd=visual;";
         private static MySqlConnection  conn    =   new MySqlConnection(sc);
         private static MySqlCommand     cmd     =   new MySqlCommand();
 
