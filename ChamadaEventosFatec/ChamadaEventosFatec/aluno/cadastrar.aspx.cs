@@ -25,7 +25,7 @@ namespace ChamadaEventosFatec.aluno
 
             string sql = "INSERT INTO aluno VALUES ('"
                 + inputMatricula.Text + "','"
-                + inputNome.Text + "','"
+                + inputNome.Text + "',"
                 + "MD5('" + inputSenha.Text + "'),'"
                 + inputEmail.Text + "')";
 
