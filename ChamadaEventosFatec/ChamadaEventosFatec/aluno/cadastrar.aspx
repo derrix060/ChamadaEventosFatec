@@ -56,6 +56,7 @@
 
         <!-- Adicionar -->
         <asp:Button ID="btnCadastrarAluno" runat="server" CssClass="btn btn-primary" Text="Cadastrar" OnClick="CadastrarAluno" />
+        <asp:Button ID="btnVoltar" runat="server" CssClass="btn btn-default" Text="Voltar" OnClick="Voltar" />
         
         
         <!-- Alertas -->

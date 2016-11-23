@@ -66,6 +66,7 @@
         <!-- Adicionar -->
         <asp:Button ID="btnEditarAluno" runat="server" CssClass="btn btn-primary" Text="Salvar" OnClick="EditarAluno" />
         <asp:Button ID="btnExcluirAluno" runat="server" CssClass="btn btn-danger" Text="Excluir" OnClick="ExcluirAluno" />
+        <asp:Button ID="btnVoltar" runat="server" CssClass="btn btn-default" Text="Voltar" OnClick="Voltar" />
         
         
         <!-- Alertas -->

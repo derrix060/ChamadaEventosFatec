@@ -52,5 +52,13 @@ namespace ChamadaEventosFatec.aluno
             inputNome.Text = "";
             inputSenha.Text = "";
         }
+
+
+        protected void Voltar(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.UrlReferrer.ToString());
+        }
     }
+
+
 }

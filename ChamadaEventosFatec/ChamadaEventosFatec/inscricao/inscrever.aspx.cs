@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text;
 
 //DataSet
 using System.Data;
@@ -58,6 +59,7 @@ namespace ChamadaEventosFatec.inscricao
                 DataRow[] dr = dt.Select(strFilterDia + " AND " + strFilterPeriodo);
                 dropPalestra.DataSource = dr.CopyToDataTable();
                 dropPalestra.DataTextField = "nome";
+                dropPalestra.DataValueField = "codigo";
                 dropPalestra.DataBind();
 
                 //Refresh Materia
@@ -65,6 +67,7 @@ namespace ChamadaEventosFatec.inscricao
                 dr = dt.Select(strFilterDia + " AND " + strFilterPeriodo);
                 dropMateria.DataSource = dr.CopyToDataTable();
                 dropMateria.DataTextField = "nome";
+                dropPalestra.DataValueField = "id";
                 dropMateria.DataBind();
             }
             catch
@@ -102,9 +105,55 @@ namespace ChamadaEventosFatec.inscricao
 
         protected void Inscrever(object sender, EventArgs e)
         {
-            sql = "INSERT INTO inscricao (aluno, palestra) VALUES ('" +
-                Session["matriculaAluno"] + "','" +
-                "" + "')";
+            List<string> materias = getMaterias();
+            List<string> palestras = getPalestras();
+            
+            for (int p = 0; p < palestras.Count; p++)
+            {
+                sql = "INSERT INTO inscricao (aluno, palestra) VALUES ('" +
+                    Session["matriculaAluno"] + "','" +
+                    palestras[p] + "')";
+
+                insertInscricaoDB(sql);
+            }
+        }
+
+        private void insertInscricaoDB(string sql)
+        {
+            try
+            {
+                BancoDados.ExecuteSql(sql);
+            }
+            catch {}
+        }
+        private List<string> getMaterias()
+        {
+            List<string> resp = new List<string>();
+            foreach (ListItem materia in dropMateria.Items)
+            {
+                if (materia.Selected)
+                    resp.Add(materia.Value);
+            }
+
+            return resp;
+        }
+
+        private List<string> getPalestras()
+        {
+            List<string> resp = new List<string>();
+
+            foreach(ListItem palestra in dropPalestra.Items)
+            {
+                if (palestra.Selected)
+                    resp.Add(palestra.Value);
+            }
+
+            return resp;
+        }
+
+        protected void Voltar (object sender, EventArgs e)
+        {
+            Response.Redirect(Request.UrlReferrer.ToString());
         }
     }
 }

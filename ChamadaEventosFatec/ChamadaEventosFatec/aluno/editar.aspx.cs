@@ -90,5 +90,11 @@ namespace ChamadaEventosFatec.aluno
             inputSenhaNova1.Text = "";
             inputSenhaNova2.Text = "";
         }
+
+
+        protected void Voltar(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.UrlReferrer.ToString());
+        }
     }
 }
