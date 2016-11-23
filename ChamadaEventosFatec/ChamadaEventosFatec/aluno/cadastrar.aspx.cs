@@ -20,13 +20,13 @@ namespace ChamadaEventosFatec.aluno
 
         protected void CadastrarAluno(object sender, EventArgs e)
         {
-           Byte[] hashedBytes = Encrypt.Criptografar(inputSenha.Text);
+           //Byte[] hashedBytes = Encrypt.Criptografar(inputSenha.Text);
 
 
             string sql = "INSERT INTO aluno VALUES ('"
                 + inputMatricula.Text + "','"
                 + inputNome.Text + "','"
-                + Encrypt.CriptToString(hashedBytes) + "','"
+                + "MD5('" + inputSenha.Text + "'),'"
                 + inputEmail.Text + "')";
 
             try
