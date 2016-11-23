@@ -49,15 +49,6 @@ namespace ChamadaEventosFatec.aluno {
         protected global::System.Web.UI.WebControls.TextBox inputSenha;
         
         /// <summary>
-        /// rfvSenha control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSenha;
-        
-        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>

@@ -29,8 +29,7 @@
         
             <!-- Senha -->
             <asp:TextBox runat="server" TextMode="Password" CssClass="form-control" ID="inputSenha" placeholder="Digite sua senha..."></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvSenha" runat="server" ControlToValidate="inputSenha" ErrorMessage="Digite uma senha!" CssClass="label label-danger"></asp:RequiredFieldValidator>
-
+            
             <!-- Botão -->
             <div class="row">
                 <div class="col-sm-6">
