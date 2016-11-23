@@ -6,13 +6,13 @@
 <head runat="server">
      <title>Inscricao</title>
     <!-- Bootstrap -->
-    <script src="../Sources/jquery.min.js"></script>
-    <link href="../Sources/bootstrap.min.css" rel="stylesheet"/>
-    <script src="../Sources/bootstrap.min.js"></script>
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../Scripts/bootstrap.min.js"></script>
     
     <!-- Bootstrap Select -->
-    <link rel="stylesheet" type="text/css" media="screen" href="../Sources/bootstrap-select.min.css"/>
-    <script src="../Sources/bootstrap-select.min.js"></script>
+    <link href="../Content/bootstrap-select.min.css" rel="stylesheet"/>
+    <script src="../Scripts/bootstrap-select.min.js"></script>
 
 
 </head>

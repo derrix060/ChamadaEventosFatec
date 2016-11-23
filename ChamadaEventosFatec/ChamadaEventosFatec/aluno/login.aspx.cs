@@ -9,8 +9,6 @@ using System.Web.UI.WebControls;
 using System.Data;
 //cript and DB
 using ChamadaEventosFatec.auxiliares;
-//DataSet
-using System.Data;
 
 namespace ChamadaEventosFatec.aluno
 {

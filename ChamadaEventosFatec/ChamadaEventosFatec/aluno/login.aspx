@@ -13,9 +13,9 @@
     <title>Login - Chamada Fatec</title>
 
     <!-- Bootstrap -->
-    <script src="../Sources/jquery.min.js"></script>
-    <link href="../Sources/bootstrap.min.css" rel="stylesheet"/>
-    <script src="../Sources/bootstrap.min.js"></script>
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../Scripts/bootstrap.min.js"></script>
 
 </head>
 <body>
