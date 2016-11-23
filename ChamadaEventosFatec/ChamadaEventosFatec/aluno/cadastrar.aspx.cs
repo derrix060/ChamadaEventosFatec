@@ -27,7 +27,7 @@ namespace ChamadaEventosFatec.aluno
                 + inputMatricula.Text + "','"
                 + inputNome.Text + "','"
                 + Encrypt.CriptToString(hashedBytes) + "','"
-                + inputEmail.Text + "'";
+                + inputEmail.Text + "')";
 
             try
             {
