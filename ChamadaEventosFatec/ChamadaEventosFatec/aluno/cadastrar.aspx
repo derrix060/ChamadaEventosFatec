@@ -55,7 +55,22 @@
         </div>
 
         <!-- Adicionar -->
-        <asp:Button ID="btnCadastrarAluno" runat="server" CssClass="btn btn-primary" Text="Cadastrar" OnClick="CadastrarAluno" />
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+                <ProgressTemplate>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                          Processando...
+                        </div>
+                      </div>
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:Button ID="btnCadastrarAluno" runat="server" CssClass="btn btn-primary" Text="Cadastrar" OnClick="CadastrarAluno" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
         <asp:Button ID="btnVoltar" runat="server" CssClass="btn btn-default" Text="Voltar" OnClick="Voltar" />
         
         
