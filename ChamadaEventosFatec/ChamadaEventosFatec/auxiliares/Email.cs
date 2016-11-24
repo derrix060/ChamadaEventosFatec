@@ -16,7 +16,7 @@ namespace ChamadaEventosFatec.auxiliares
         static string host = "smtp.gmail.com";
         private static string email = "chamadafatec@gmail.com";
 
-        static int port = 465;
+        static int port = 587;
         static NetworkCredential credencial = new NetworkCredential(email, "ChamadaFatec2016");
         static MailAddress eFrom = new MailAddress(email);
 
@@ -40,6 +40,7 @@ namespace ChamadaEventosFatec.auxiliares
             try
             {
                 smtp.EnableSsl = true;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Credentials = credencial;
                 smtp.Send(mail);
                 return "Email enviado com sucesso!";

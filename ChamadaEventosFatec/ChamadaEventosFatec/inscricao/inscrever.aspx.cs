@@ -30,6 +30,7 @@ namespace ChamadaEventosFatec.inscricao
                 Carrega_Dia();
                 Carrega_Palestra();
                 Carrega_Materia();
+                Carrega_Aluno();
 
                 //load periodo
                 dropPeriodo.DataSource = ds.Tables["tbPeriodo"];
@@ -147,7 +148,7 @@ namespace ChamadaEventosFatec.inscricao
         {
             //email To
             List<string> email = new List<string>();
-            email.Add(ds.Tables["tbAluno"].Rows[0]["matricula"].ToString());
+            email.Add(ds.Tables["tbAluno"].Rows[0]["email"].ToString());
 
             //assunto
             string assunto = "Parabens! Inscricao realizada com sucesso!";
