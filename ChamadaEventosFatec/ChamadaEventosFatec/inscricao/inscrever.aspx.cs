@@ -57,24 +57,24 @@ namespace ChamadaEventosFatec.inscricao
                 //Refresh Palestra
                 DataTable dt = ds.Tables["tbPalestra"];
                 DataRow[] dr = dt.Select(strFilterDia + " AND " + strFilterPeriodo);
-                dropPalestra.DataSource = dr.CopyToDataTable();
-                dropPalestra.DataTextField = "nome";
-                dropPalestra.DataValueField = "codigo";
-                dropPalestra.DataBind();
+                listPalestra.DataSource = dr.CopyToDataTable();
+                listPalestra.DataTextField = "nome";
+                listPalestra.DataValueField = "codigo";
+                listPalestra.DataBind();
 
                 //Refresh Materia
                 dt = ds.Tables["tbMateria"];
                 dr = dt.Select(strFilterDia + " AND " + strFilterPeriodo);
-                dropMateria.DataSource = dr.CopyToDataTable();
-                dropMateria.DataTextField = "nome";
-                dropPalestra.DataValueField = "id";
-                dropMateria.DataBind();
+                listMateria.DataSource = dr.CopyToDataTable();
+                listMateria.DataTextField = "nome";
+                listMateria.DataValueField = "id";
+                listMateria.DataBind();
             }
             catch
             {
                 //não possui nenhum eveto para esse dia
-                dropPalestra.Items.Clear();
-                dropMateria.Items.Clear();
+                listPalestra.Items.Clear();
+                listMateria.Items.Clear();
             }
 
         }
@@ -105,17 +105,33 @@ namespace ChamadaEventosFatec.inscricao
 
         protected void Inscrever(object sender, EventArgs e)
         {
+            alertDanger.Visible = false;
+            alertSuccess.Visible = true;
+
             List<string> materias = getMaterias();
             List<string> palestras = getPalestras();
-            
-            for (int p = 0; p < palestras.Count; p++)
+
+            //inscrever nas palestras
+            foreach (string palestra in palestras)
             {
                 sql = "INSERT INTO inscricao (aluno, palestra) VALUES ('" +
                     Session["matriculaAluno"] + "','" +
-                    palestras[p] + "')";
+                    palestra + "')";
 
                 insertInscricaoDB(sql);
             }
+
+            //inscrever nas materias
+            foreach (string materia in materias)
+            {
+                sql = "INSERT INTO incricao_materia (aluno, materia) VALUES ('" +
+                    Session["matriculaAluno"] + "','" +
+                    materia + "')";
+
+                insertInscricaoDB(sql);
+            }
+
+            alertSuccess.Visible = true;
         }
 
         private void insertInscricaoDB(string sql)
@@ -129,7 +145,7 @@ namespace ChamadaEventosFatec.inscricao
         private List<string> getMaterias()
         {
             List<string> resp = new List<string>();
-            foreach (ListItem materia in dropMateria.Items)
+            foreach (ListItem materia in listMateria.Items)
             {
                 if (materia.Selected)
                     resp.Add(materia.Value);
@@ -142,7 +158,7 @@ namespace ChamadaEventosFatec.inscricao
         {
             List<string> resp = new List<string>();
 
-            foreach(ListItem palestra in dropPalestra.Items)
+            foreach(ListItem palestra in listPalestra.Items)
             {
                 if (palestra.Selected)
                     resp.Add(palestra.Value);
@@ -155,5 +171,7 @@ namespace ChamadaEventosFatec.inscricao
         {
             Response.Redirect(Request.UrlReferrer.ToString());
         }
+        
+
     }
 }

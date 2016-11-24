@@ -14,7 +14,6 @@
     <link href="../Content/bootstrap-select.min.css" rel="stylesheet"/>
     <script src="../Scripts/bootstrap-select.min.js"></script>
 
-
 </head>
 <body>
     <form id="formInscricao" runat="server" class="container">
@@ -47,18 +46,18 @@
             <!-- Palestra -->
             <div class="form-group">
                 <asp:Label runat="server">Palestras</asp:Label><br />
-                <asp:DropDownList runat="server" CssClass="selectpicker show-tick" data-live-search="true" ID="dropPalestra" multiple="true"></asp:DropDownList>
+                <asp:ListBox runat="server" CssClass="selectpicker show-tick" data-live-search="true" ID="listPalestra" multiple="true" SelectionMode="Multiple"></asp:ListBox>
                     
-                <asp:RequiredFieldValidator ID="rfvPalestra" runat="server" ControlToValidate="dropPalestra" ErrorMessage="Campo obrigatório!" CssClass="label label-danger"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvPalestra" runat="server" ControlToValidate="listPalestra" ErrorMessage="Campo obrigatório!" CssClass="label label-danger"></asp:RequiredFieldValidator>
             </div>
         
         
             <!-- Materia -->
             <div class="form-group">
                 <asp:Label runat="server">Materias</asp:Label><br />
-                <asp:DropDownList runat="server" CssClass="selectpicker show-tick" data-live-search="true" ID="dropMateria"  multiple="true"></asp:DropDownList>
+                <asp:ListBox runat="server" CssClass="selectpicker show-tick" data-live-search="true" ID="listMateria" SelectionMode="Multiple"></asp:ListBox>
                     
-                <asp:RequiredFieldValidator ID="rfvMateria" runat="server" ControlToValidate="dropMateria" ErrorMessage="Campo obrigatório!" CssClass="label label-danger"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvMateria" runat="server" ControlToValidate="listMateria" ErrorMessage="Campo obrigatório!" CssClass="label label-danger"></asp:RequiredFieldValidator>
             </div>
         </div>
         
@@ -68,7 +67,18 @@
         <asp:Button ID="btnInscrever" runat="server" CssClass="btn btn-primary" Text="Submit" OnClick="Inscrever" />
         <asp:Button ID="btnVoltar" runat="server" CssClass="btn btn-default" Text="Voltar" OnClick="Voltar" />
 
-    </form>
+       
+
+        <!-- Alertas -->
+        <div class="alert alert-success alert-dismissable fade in" runat="server" id="alertSuccess" visible="false">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Parabéns!</strong> Inscrição realizada com sucesso!
+        </div>
+
+        <div class="alert alert-danger alert-dismissable fade in" runat="server" id="alertDanger" visible="false">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Ops... </strong> Algo aconteceu errado, tente novamente mais tarde!
+        </div>
 
     
     <script type="text/javascript">
@@ -76,5 +86,9 @@
                 $(".selectpicker").selectpicker();
             });
     </script>
-</body>
+
+    </form>
+
+    
+    </body>
 </html>

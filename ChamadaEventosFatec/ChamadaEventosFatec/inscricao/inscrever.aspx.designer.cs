@@ -58,13 +58,13 @@ namespace ChamadaEventosFatec.inscricao {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDia;
         
         /// <summary>
-        /// dropPalestra control.
+        /// listPalestra control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropPalestra;
+        protected global::System.Web.UI.WebControls.ListBox listPalestra;
         
         /// <summary>
         /// rfvPalestra control.
@@ -76,13 +76,13 @@ namespace ChamadaEventosFatec.inscricao {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPalestra;
         
         /// <summary>
-        /// dropMateria control.
+        /// listMateria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropMateria;
+        protected global::System.Web.UI.WebControls.ListBox listMateria;
         
         /// <summary>
         /// rfvMateria control.
@@ -110,5 +110,23 @@ namespace ChamadaEventosFatec.inscricao {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnVoltar;
+        
+        /// <summary>
+        /// alertSuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertSuccess;
+        
+        /// <summary>
+        /// alertDanger control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertDanger;
     }
 }
