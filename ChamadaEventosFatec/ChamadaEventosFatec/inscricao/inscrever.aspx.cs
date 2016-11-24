@@ -8,7 +8,7 @@ using System.Text;
 
 //DataSet
 using System.Data;
-//Database and Encript
+//Database, Encript and Email
 using ChamadaEventosFatec.auxiliares;
 
 namespace ChamadaEventosFatec.inscricao

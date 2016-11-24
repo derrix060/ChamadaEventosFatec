@@ -7,7 +7,10 @@ using System.Web.UI.WebControls;
 
 //MD5
 using ChamadaEventosFatec.auxiliares;
-//Database and Encript
+//Database, Encript and Email
+using ChamadaEventosFatec.auxiliares;
+
+
 namespace ChamadaEventosFatec.aluno
 {
     public partial class cadastrar : System.Web.UI.Page
@@ -34,14 +37,39 @@ namespace ChamadaEventosFatec.aluno
                 BancoDados.ExecuteSql(sql);
                 Clear();
                 alertSuccess.Visible = true;
+
+                //envia email
+
             }
             catch (Exception exception)
             {
                 alertDanger.Visible = true;
-                alertDanger.InnerHtml += "<strong>Ops! </strong> Houve algum problema!<br><br>Message: "
+                alertDanger.InnerHtml = "<strong>Ops! </strong> Houve algum problema!<br><br>Message: "
                     + exception.Message + "<br>Erro: " + exception.ToString();
             }
         }
+
+        private void criarEmail()
+        {
+            //email To
+            List<string> email = new List<string>();
+            email.Add(inputEmail.Text);
+
+            //assunto
+            string assunto = "Cadastro realizado com sucesso!";
+
+            //corpo
+            string corpo = "Parabéns " + inputNome.Text + "! Seu cadastro no sistema foi realizado com sucesso!";
+
+            //enviar
+             alertDanger.Visible = true;
+            alertDanger.InnerHtml = "<strong>Ops!</strong > Houve algum problema!<br><br>"
+                + Email.EnviarEmail(email, corpo, assunto);
+
+
+
+        }
+
 
         private void Clear()
         {
