@@ -20,7 +20,7 @@
         </div>
 
         <div class="page-header">
-            <h2>Formulário de inscrição</h2>
+            <h2>Formulário</h2>
         </div>
 
          <!-- Matricula -->

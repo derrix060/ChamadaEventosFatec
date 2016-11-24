@@ -67,15 +67,6 @@ namespace ChamadaEventosFatec.inscricao {
         protected global::System.Web.UI.WebControls.ListBox listPalestra;
         
         /// <summary>
-        /// rfvPalestra control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPalestra;
-        
-        /// <summary>
         /// listMateria control.
         /// </summary>
         /// <remarks>
@@ -83,15 +74,6 @@ namespace ChamadaEventosFatec.inscricao {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox listMateria;
-        
-        /// <summary>
-        /// rfvMateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMateria;
         
         /// <summary>
         /// btnInscrever control.

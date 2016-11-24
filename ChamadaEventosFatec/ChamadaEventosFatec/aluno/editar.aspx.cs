@@ -94,7 +94,7 @@ namespace ChamadaEventosFatec.aluno
 
         protected void Voltar(object sender, EventArgs e)
         {
-            Response.Redirect(Request.UrlReferrer.ToString());
+            Response.Redirect("/aluno/inicio.aspx");
         }
     }
 }

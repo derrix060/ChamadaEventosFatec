@@ -16,15 +16,13 @@
 
 </head>
 <body>
-    <form id="formInscricao" runat="server" class="container">
+    <form id="formInscricao" runat="server">
+    <div class="container">
 
         <div class="jumbotron">
             <h1>Formulario de inscricao</h1>
-            <h3>Bem-vindo aluno!</h3>
         </div>
        
-        
-        <div class="form-group">
             
             <!-- Periodo -->
             <div class="form-group">
@@ -47,8 +45,6 @@
             <div class="form-group">
                 <asp:Label runat="server">Palestras</asp:Label><br />
                 <asp:ListBox runat="server" CssClass="selectpicker show-tick" data-live-search="true" ID="listPalestra" multiple="true" SelectionMode="Multiple"></asp:ListBox>
-                    
-                <asp:RequiredFieldValidator ID="rfvPalestra" runat="server" ControlToValidate="listPalestra" ErrorMessage="Campo obrigatório!" CssClass="label label-danger"></asp:RequiredFieldValidator>
             </div>
         
         
@@ -56,10 +52,7 @@
             <div class="form-group">
                 <asp:Label runat="server">Materias</asp:Label><br />
                 <asp:ListBox runat="server" CssClass="selectpicker show-tick" data-live-search="true" ID="listMateria" SelectionMode="Multiple"></asp:ListBox>
-                    
-                <asp:RequiredFieldValidator ID="rfvMateria" runat="server" ControlToValidate="listMateria" ErrorMessage="Campo obrigatório!" CssClass="label label-danger"></asp:RequiredFieldValidator>
             </div>
-        </div>
         
         
 
@@ -87,6 +80,7 @@
             });
     </script>
 
+    </div>
     </form>
 
     
