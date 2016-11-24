@@ -103,13 +103,19 @@ namespace ChamadaEventosFatec.inscricao
             BancoDados.UpdateDataSet(ds, sql, "tbMateria", true);
         }
 
+        private void Carrega_Aluno()
+        {
+            sql = "SELECT * FROM aluno";
+            BancoDados.UpdateDataSet(ds, sql, "tbAluno", true);
+        }
+
         protected void Inscrever(object sender, EventArgs e)
         {
             alertDanger.Visible = false;
             alertSuccess.Visible = true;
 
-            List<string> materias = getMaterias();
-            List<string> palestras = getPalestras();
+            List<string> materias = getMateriasValues();
+            List<string> palestras = getPalestrasValues();
 
             //inscrever nas palestras
             foreach (string palestra in palestras)
@@ -131,7 +137,47 @@ namespace ChamadaEventosFatec.inscricao
                 insertInscricaoDB(sql);
             }
 
+            //enviar email
+            criarEmail();
+
             alertSuccess.Visible = true;
+        }
+
+        private void criarEmail()
+        {
+            //email To
+            List<string> email = new List<string>();
+            email.Add(ds.Tables["tbAluno"].Rows[0]["matricula"].ToString());
+
+            //assunto
+            string assunto = "Parabens! Inscricao realizada com sucesso!";
+
+            //corpo
+            string corpo = "Sua inscrição foi realizada com sucesso para as seguintes palestras: ";
+            corpo += "<br><br>";
+
+            //palestras e materias
+            List<string> materias = getMateriasText();
+            List<string> palestras = getPalestrasText();
+
+            //alimentar palestras
+            foreach (string palestra in palestras)
+            {
+                corpo += palestra + ", ";
+            }
+            corpo.Remove(corpo.Length -2);
+
+            //alimentar materias
+            corpo += "<br><br>E para as seguintes materias: <br><br>";
+            foreach (string materia in materias)
+            {
+                corpo += materia + ", ";
+            }
+            corpo.Remove(corpo.Length - 2);
+
+
+            string resp = Email.EnviarEmail(email, corpo, assunto);
+
         }
 
         private void insertInscricaoDB(string sql)
@@ -142,7 +188,31 @@ namespace ChamadaEventosFatec.inscricao
             }
             catch {}
         }
-        private List<string> getMaterias()
+
+        private List<string> getMateriasText()
+        {
+            List<string> resp = new List<string>();
+            foreach (ListItem materia in listMateria.Items)
+            {
+                if (materia.Selected)
+                    resp.Add(materia.Text);
+            }
+
+            return resp;
+        }
+        private List<string> getPalestrasText()
+        {
+            List<string> resp = new List<string>();
+            foreach (ListItem palestra in listPalestra.Items)
+            {
+                if (palestra.Selected)
+                    resp.Add(palestra.Text);
+            }
+
+            return resp;
+        }
+
+        private List<string> getMateriasValues()
         {
             List<string> resp = new List<string>();
             foreach (ListItem materia in listMateria.Items)
@@ -154,7 +224,7 @@ namespace ChamadaEventosFatec.inscricao
             return resp;
         }
 
-        private List<string> getPalestras()
+        private List<string> getPalestrasValues()
         {
             List<string> resp = new List<string>();
 
