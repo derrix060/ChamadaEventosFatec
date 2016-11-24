@@ -13,11 +13,11 @@ namespace ChamadaEventosFatec.auxiliares
 {
     public class Email
     {
-        static string host = "smtp.gmail.com";
-        private static string email = "chamadafatec@gmail.com";
+        static string host = "smtp.office365.com";
+        private static string email = "mario@unacapital.com.br";
 
         static int port = 587;
-        static NetworkCredential credencial = new NetworkCredential(email, "ChamadaFatec2016");
+        static NetworkCredential credencial = new NetworkCredential(email, "Unacap@02");
         static MailAddress eFrom = new MailAddress(email);
 
         public static string EnviarEmail (List<string> emailTo, string corpoMensagem, string assunto)
